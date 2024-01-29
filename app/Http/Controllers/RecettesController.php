@@ -12,9 +12,16 @@ class RecettesController extends Controller
      */
     public function index()
     {
-        $recettes = Recettes::query()->paginate(1);
-        return view('recettes.index', compact('recettes'));
+        $recettes = Recettes::paginate(5); 
+        return view('recettes.index', compact('recettes')); 
     }
+
+    public function Afficher_all()
+    {
+        $recettes = Recettes::all(); 
+        return view('recettes.home', compact('recettes')); 
+    }
+    
 
     /**
      * Show the form for creating a new resource.
