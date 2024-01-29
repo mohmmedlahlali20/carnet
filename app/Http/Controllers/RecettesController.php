@@ -18,10 +18,15 @@ class RecettesController extends Controller
 
     public function Afficher_all()
     {
-        $recettes = Recettes::all(); 
+        $recettes = Recettes::paginate(5); 
         return view('recettes.home', compact('recettes')); 
     }
-    
+    public function Afficher_detail(Request $request){
+
+            $id = (int)$request->id;
+            $Recettes= Recettes::findOrfail($id);
+        return view('recettes.detail' ,compact('Recettes'));
+    }
 
     /**
      * Show the form for creating a new resource.

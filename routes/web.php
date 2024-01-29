@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RecettesController::class, 'Afficher_all'])->name('recettes.all');
+Route::get('/recettes/{id}', [RecettesController::class, 'Afficher_detail'])->name('AfficherDetail');
 
 Route::resources([
     'recettes' => RecettesController::class

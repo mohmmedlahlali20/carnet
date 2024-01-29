@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ $recette->id }}</td>
                 <td>{{ $recette->title }}</td>
-                <td>{{ $recette->description }}</td>
+                <td>{{ Str::limit($recette->description ,20)}}</td>
                 <td>{{ $recette->image }}</td>
                 <td>
                     <a class="btn btn-info" href="">Update</a>
