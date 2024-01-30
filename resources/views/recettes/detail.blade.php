@@ -14,6 +14,5 @@
         </div>
     </div>
 </div>
-
     <a class="btn btn-danger mt-4 btn-block" href="/">Page</a>
 @endsection

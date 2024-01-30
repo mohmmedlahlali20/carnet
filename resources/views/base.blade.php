@@ -8,6 +8,14 @@
     <title>@yield('titel')|{{config('app.name')}}</title>
 </head>
 <body>
+        <nav class="navbar navbar-expand-sm navbar-light bg-danger">
+            <div>
+                <img src="" alt="">
+            </div>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Recettes</a>
+            </div>
+        </nav>
     <div class="container">
         @yield('content')
     </div>

@@ -42,6 +42,7 @@ class RecettesController extends Controller
             $validatedData['image'] = $request->file('image')->store('recettes', 'public');
         }
         $recette = new Recettes($validatedData);
+        dd($recette);
         if ($recette->save()) {
             return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
         } else {
@@ -49,17 +50,15 @@ class RecettesController extends Controller
         }
     }
 
-
     public function show(Recettes $recettes)
     {
         //
     }
 
-    public function edit(Recettes $recettes)
-    {
-
+    public function edit($id)
+    { 
         $isUpdate = true;
-       
+        $recettes = Recettes::find($id);
         return view('recettes.create',compact('recettes','isUpdate'));
     }
 
@@ -68,7 +67,6 @@ class RecettesController extends Controller
         //
     }
 
-    
         public function destroy(Recettes $recette)
         { 
             $recette = Recettes::find($recette->id);
