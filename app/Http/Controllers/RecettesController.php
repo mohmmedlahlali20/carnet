@@ -24,33 +24,30 @@ class RecettesController extends Controller
     public function Afficher_detail(Request $request)
     {
             $id = (int)$request->id;
-            $Recettes= Recettes::findOrfail($id);
-        return view('recettes.detail' ,compact('Recettes'));
+            $recettes= Recettes::find($id);
+            return view('recettes.detail' ,compact('recettes'));
     }
 
     public function create()
     {
         $recettes = new Recettes();
-        return view('recettes.create',compact('recettes'));
+        $isUpdate = false;
+        return view('recettes.create',compact('recettes' , 'isUpdate'));
     }
 
     public function store(RecettesRequest $request)
-{
-
-    $validatedData = $request->validated();
-
-    if($request->hasFile('image')){
-
-        $validatedData['image'] = $request->file('image')->store('recettes', 'public');
+    {
+        $validatedData = $request->validated();
+        if($request->hasFile('image')){
+            $validatedData['image'] = $request->file('image')->store('recettes', 'public');
+        }
+        $recette = new Recettes($validatedData);
+        if ($recette->save()) {
+            return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
+        } else {
+            return redirect()->back()->withErrors(['error' , 'Une erreur ']);
+        }
     }
-
-    $recette = new Recettes($validatedData);
-    if ($recette->save()) {
-        return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
-    } else {
-        return redirect()->back()->withErrors(['error' , 'Une erreur ']);
-    }
-}
 
 
     public function show(Recettes $recettes)
@@ -60,7 +57,10 @@ class RecettesController extends Controller
 
     public function edit(Recettes $recettes)
     {
-        //
+
+        $isUpdate = true;
+       
+        return view('recettes.create',compact('recettes','isUpdate'));
     }
 
     public function update(Request $request, Recettes $recettes)
@@ -68,8 +68,13 @@ class RecettesController extends Controller
         //
     }
 
-    public function destroy(Recettes $recettes)
-    {
-        dd($recettes);
-    }
+    
+        public function destroy(Recettes $recette)
+        { 
+            $recette = Recettes::find($recette->id);
+            $recette->delete();
+            return redirect()->back()->with('success', 'Recette supprimée avec succès');
+        }
+        
+    
 }

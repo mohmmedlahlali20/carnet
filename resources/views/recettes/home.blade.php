@@ -21,7 +21,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- {{ $recette->image }} --}}
             @endforeach
         </div>
     </div>

@@ -13,14 +13,14 @@
                     aria-label="Recipient's username" aria-describedby="basic-addon2">
             </div>
             <br>
-
             <div class="input-group">
                 <span class="input-group-text">Description</span>
                 <textarea name="description" class="form-control" aria-label="With textarea">{{old('description')}}</textarea>
             </div>
             <br>
-            <div class="d-grid">
+            <div class="d-grit col-2 ">
                 <button class="btn btn-info mt-4 btn-block" type="submit">Add New Recette</button>
+                <a class="btn btn-danger mt-4 btn-block" href="/">Page</a>
             </div>
         </form>
     </div>

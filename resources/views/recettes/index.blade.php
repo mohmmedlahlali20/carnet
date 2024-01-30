@@ -1,7 +1,7 @@
 @extends('base')
 @section('title', 'recette')
 @section('content')
-    <h1 class="text-center display-4">Recette Liste</h1>
+    <h1 class="text-center display-4">Recette Liste hna</h1>
     <a href="recettes/create" class="btn btn-primary">Ajouter une nouvelle Recette</a>
     <br>
     <br>
@@ -25,10 +25,10 @@
                         <img width="100px" src="storage/{{ $recette->image }}" alt="">
                     </td>
                     <td>
-                        <a class="btn btn-info" href="">Update</a>
+                        <a class="btn btn-info" href="{{route('recettes.edit', $recette)}}">Update</a>
                         <br>
                         <br>
-                        <form method="POST" action="{{ route('recettes.destroy', $recette->id) }}">
+                        <form method="POST" action="{{ route('recettes.destroy', $recette) }}">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Delete" class="btn btn-danger">
