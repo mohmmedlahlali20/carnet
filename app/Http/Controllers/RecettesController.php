@@ -35,15 +35,23 @@ class RecettesController extends Controller
     }
 
     public function store(RecettesRequest $request)
-    {
-        // dd();
-        $formFields = $request->validated();
-        if($request->hasFile('image')){
-            $formFields['image'] = $request->file('image')->store('recettes');
-        }
-        Recettes::creat($formFields);
-        
+{
+
+    $validatedData = $request->validated();
+
+    if($request->hasFile('image')){
+
+        $validatedData['image'] = $request->file('image')->store('recettes', 'public');
     }
+
+    $recette = new Recettes($validatedData);
+    if ($recette->save()) {
+        return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
+    } else {
+        return redirect()->back()->withErrors(['error' , 'Une erreur ']);
+    }
+}
+
 
     public function show(Recettes $recettes)
     {
@@ -62,6 +70,6 @@ class RecettesController extends Controller
 
     public function destroy(Recettes $recettes)
     {
-        //
+        dd($recettes);
     }
 }
