@@ -11,5 +11,6 @@
     <div class="container">
         @yield('content')
     </div>
+    <script src="https://kit.fontawesome.com/c0bae2ffa6.js" crossorigin="anonymous"></script>
 </body>
 </html>

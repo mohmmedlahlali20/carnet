@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class RecettesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $recettes = Recettes::paginate(5); 
@@ -21,56 +19,40 @@ class RecettesController extends Controller
         $recettes = Recettes::paginate(5); 
         return view('recettes.home', compact('recettes')); 
     }
-    public function Afficher_detail(Request $request){
 
+    public function Afficher_detail(Request $request)
+    {
             $id = (int)$request->id;
             $Recettes= Recettes::findOrfail($id);
         return view('recettes.detail' ,compact('Recettes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $recettes = new Recettes();
+        return view('recettes.create',compact('recettes'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Recettes $recettes)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Recettes $recettes)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Recettes $recettes)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Recettes $recettes)
     {
         //

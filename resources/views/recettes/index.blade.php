@@ -26,14 +26,13 @@
                     <a class="btn btn-info" href="">Update</a>
                     <br>
                     <br>
-                    <form  action="">
+                    <form method=""  action="">
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </tbody>
-   
 </table>
 {{ $recettes->links() }}
 @endsection
