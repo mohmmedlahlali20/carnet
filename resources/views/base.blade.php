@@ -15,6 +15,14 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Recettes</a>
             </div>
+            <form action="{{ url('/search') }}" method="get" class="form-inline">
+                <div class="input-group">
+                    <input type="search" name="query" placeholder="Search" class="form-control">&nbsp;&nbsp;
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>
         </nav>
     <div class="container">
         @yield('content')

@@ -42,7 +42,7 @@ class RecettesController extends Controller
             $validatedData['image'] = $request->file('image')->store('recettes', 'public');
         }
         $recette = new Recettes($validatedData);
-        dd($recette);
+        // dd($recette);
         if ($recette->save()) {
             return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
         } else {
@@ -73,6 +73,13 @@ class RecettesController extends Controller
             $recette->delete();
             return redirect()->back()->with('success', 'Recette supprimée avec succès');
         }
+
+        public function search(){
+            $search = $_GET['query'];
+            $recettes = Recettes::where('title' , 'LIKE' , '%' .$search.'%')->get();
+            return view('recettes.search',compact('recettes'));
+        }
         
     
 }
+// ->with()
