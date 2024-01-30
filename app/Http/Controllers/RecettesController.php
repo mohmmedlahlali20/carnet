@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RecettesRequest;
 use App\Models\Recettes;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,15 @@ class RecettesController extends Controller
         return view('recettes.create',compact('recettes'));
     }
 
-    public function store(Request $request)
+    public function store(RecettesRequest $request)
     {
-        //
+        // dd();
+        $formFields = $request->validated();
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('recettes');
+        }
+        Recettes::creat($formFields);
+        
     }
 
     public function show(Recettes $recettes)

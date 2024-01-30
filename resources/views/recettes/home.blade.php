@@ -12,7 +12,7 @@
             @foreach($recettes as $recette)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="" class="card-img-top" alt="...">
+                        <img src="recettes/{{ $recette->image }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $recette->title }}</h5>
                             <p class="card-text">{{ Str::limit($recette->description ,20) }}</p>
