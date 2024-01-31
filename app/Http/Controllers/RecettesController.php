@@ -59,13 +59,26 @@ class RecettesController extends Controller
     { 
         $isUpdate = true;
         $recettes = Recettes::find($id);
+        // dd($recettes);
+     
         return view('recettes.create',compact('recettes','isUpdate'));
     }
 
-    public function update(Request $request, Recettes $recettes)
-    {
-        //
+    public function update(RecettesRequest $request, Recettes $recettes)
+{
+    $formFields = $request->validated();
+
+
+    if ($request->hasFile('image')) {
+  
+        $imagePath = $request->file('image')->store('images'); 
+        $formFields['image'] = $imagePath;
     }
+
+    $recettes->fill($formFields)->save();
+
+    return redirect()->route('recettes.index')->with('success', 'Recette mise à jour avec succès');
+}
 
         public function destroy(Recettes $recette)
         { 

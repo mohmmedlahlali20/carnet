@@ -18,6 +18,7 @@ Route::get('/', [RecettesController::class, 'Afficher_all'])->name('recettes.all
 Route::get('/recettes/{id}', [RecettesController::class, 'Afficher_detail'])
 ->where('id', '\d+')
 ->name('AfficherDetail');
+
 Route::get('/search', [RecettesController::class , 'search']);
 
 Route::resources([
