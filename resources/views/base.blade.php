@@ -8,7 +8,8 @@
     <title>@yield('title') | {{ config('app.name') }}</title>
 </head>
 <body>
-    @if (Auth::check())
+    
+
     <nav class="navbar navbar-expand-sm navbar-light bg-danger">
         <div>
             <img src="" alt="">
@@ -25,7 +26,7 @@
             </div>
         </form>
     </nav>
-    @endif
+    
     <div class="container">
         @yield('content')
     </div>

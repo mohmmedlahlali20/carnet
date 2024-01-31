@@ -15,17 +15,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::post('/login', [UserController::class, 'login'])->name('login');
+// Route::post('/login', [UserController::class, 'login'])->name('login');
+// Route::post('/LoginShow', [UserController::class, 'LoginShow'])->name('LoginShow');
 
 Route::get('/register', [UserController::class, 'register']);
-Route::get('/', [RecettesController::class, 'Afficher_all'])->name('recettes.all')->middleware('auth');
+Route::get('/', [RecettesController::class, 'Afficher_all'])->name('recettes.all');
 
 Route::get('/recettes/{id}', [RecettesController::class, 'Afficher_detail'])
 ->where('id', '\d+')
 ->name('AfficherDetail')
-->middleware('auth');
+;
 
-Route::get('/search', [RecettesController::class , 'search'])->middleware('auth');
+Route::get('/search', [RecettesController::class , 'search']);
 
-// Route::resources(['recettes' => RecettesController::class]);
-Route::resource('recettes', RecettesController::class)->middleware('auth');;
+Route::resources(['recettes' => RecettesController::class]);
+Route::resource('recettes', RecettesController::class);
