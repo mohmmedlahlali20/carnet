@@ -11,7 +11,7 @@ class RecettesController extends Controller
 
     public function index()
     {
-        $recettes = Recettes::paginate(5); 
+        $recettes = Recettes::paginate(6); 
         return view('recettes.index', compact('recettes')); 
     }
 
@@ -77,7 +77,7 @@ class RecettesController extends Controller
 // dd($formFields);
 $ID->update($formFields);
     
-     return redirect()->route('recettes.index')->with('success', 'Recette mise à jour avec succès');
+    return redirect()->route('recettes.index')->with('success', 'Recette mise à jour avec succès');
 }
 
         public function destroy(Recettes $recette)

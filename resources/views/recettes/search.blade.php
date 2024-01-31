@@ -13,6 +13,7 @@
                 <h1> 
                     hsaaaalti hadi "{{ $_GET['query'] }}" ga3ma kayna
                 </h1>
+                <a href="recettes/create" class="btn btn-warning text-center">ADD this {{ $_GET['query'] }} recettes <i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
         @else
             <div class="row">

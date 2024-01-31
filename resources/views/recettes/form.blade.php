@@ -2,7 +2,6 @@
     <div  class="row my-4">
         @php
         $route = $isUpdate ? route('recettes.update', $recettes->id) : route('recettes.store');
-        echo $route ;
     @endphp
     <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -34,7 +33,7 @@
                     Create
                 @endif
             </button>
-            <a class="btn btn-danger mt-4 btn-block" href="/">Go Back</a>
+            <a class="btn btn-danger mt-4 btn-block" href="/"><i class="fa fa-backward" aria-hidden="true"></i></a>
         </div>
     </form>
     
