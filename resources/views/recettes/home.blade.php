@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <h1  class="text-center display-4">Toutes les recettes</h1>
-          <br>
-          <br>
+            <br>
+            <br>
         <a href="recettes" class="btn btn-info">Gestion Des recettes </a>
         <br>
         <br>

@@ -3,6 +3,7 @@
 @section('content')
 <br>
 <div class="container">
+    @if ($recettes)
     <div class="card">
         <div class="text-center">
             <img style="width: 200px" src="{{ asset('storage/' . $recettes->image) }}" class="card-img-top" alt="Recettes Image">
@@ -14,6 +15,13 @@
             <p class="card-text"><small class="text-muted">Écrit par: {{ $recettes->user_id }}</small></p>
         </div>
     </div>
+    @else
+    <div class="alert alert-danger" role="alert">
+        <h3> this recettes dosn't exist</h3>
+        <a href="create" class="btn btn-warning">ADD&nbsp;<i class="fa fa-plus-square" aria-hidden="true"></i></a>
+
+    </div>
+    @endif
 </div>
 <a class="btn btn-danger mt-4 btn-block" href="/"><i class="fa fa-backward" aria-hidden="true"></i></a>
 @endsection

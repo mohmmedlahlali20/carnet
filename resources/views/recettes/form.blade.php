@@ -1,8 +1,8 @@
 <div  class=" m-5">
     <div  class="row my-4">
         @php
-        $route = $isUpdate ? route('recettes.update', $recettes->id) : route('recettes.store');
-    @endphp
+            $route = $isUpdate ? route('recettes.update', $recettes->id) : route('recettes.store');
+        @endphp
     <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
         @if ($isUpdate)
@@ -16,7 +16,7 @@
         <div class="input-group mb-3">
             <input name="image" value="{{old('image')}}" type="file" class="form-control" placeholder="IMG" aria-label="Recipient's username" aria-describedby="basic-addon2">
             @if ($recettes->image)
-                <img src="/storage/{{ $recettes->image }}" class="card-img-top" style="width: 100px;" alt="...">
+                <img src="/storage/{{ $recettes->image }}" class="card-img-top" style="width: 100px;" alt="">
             @endif
         </div>
         <br>

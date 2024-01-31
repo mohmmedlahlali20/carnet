@@ -19,7 +19,6 @@
         <div class="container-fluid">
             <a class="navbar-brand " style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; font-size:3 rem" href="/">HOME</a>
         </div>
-        <div class="collapse navbar-collapse justify-content-center">
             <form action="{{ url('/search') }}" method="get" class="form-inline">
                 <div class="input-group">
                     <input type="search" name="query" placeholder="Search" class="form-control">&nbsp;&nbsp;
@@ -29,17 +28,14 @@
                     </div>
                 </div>
             </form>
-        </div>
     </nav>
 
     <div class="container">
         @yield('content')
     </div>
-    <br>
-    <br>
-    <br>
+    <br><br> <br><br><br> <br>
     <script src="https://kit.fontawesome.com/c0bae2ffa6.js" crossorigin="anonymous"></script>
-    <<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
         <div class="container text-center">
             <small>Créé avec <i class="fas fa-heart text-danger"></i> par Recette</small>
         </div>

@@ -2,16 +2,12 @@
 @section('title', 'home')
 @section('content')
     <div class="container">
-        <h1 class="text-center display-4">Toutes les recettes</h1>
-        <br>
-        <br>
-        <a href="recettes" class="btn btn-info">Gestion Des recettes</a>
-        <br>
-        <br>
+        <h1 class="text-center display-4">Toutes les recettes</h1><br><br>
+        <a href="recettes" class="btn btn-info">Gestion Des recettes</a> <br>     <br>
         @if($recettes->isEmpty())
             <div class="alert alert-danger">
                 <h1> 
-                    hsaaaalti hadi "{{ $_GET['query'] }}" ga3ma kayna
+                    mkynach "{{ $_GET['query'] }}"  . tzidha??
                 </h1>
                 <a href="recettes/create" class="btn btn-warning text-center">ADD this {{ $_GET['query'] }} recettes <i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
