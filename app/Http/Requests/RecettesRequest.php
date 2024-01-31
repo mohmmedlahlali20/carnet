@@ -21,7 +21,7 @@ class RecettesRequest extends FormRequest
      */
     public function rules(): array
     {
-        $rules = [
+          $rules = [
             'title' => 'required',
             'description' => 'required',
         ];

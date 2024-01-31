@@ -2,6 +2,7 @@
     <div  class="row my-4">
         @php
         $route = $isUpdate ? route('recettes.update', $recettes->id) : route('recettes.store');
+        echo $route ;
     @endphp
     <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf

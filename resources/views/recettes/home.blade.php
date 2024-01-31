@@ -12,11 +12,12 @@
             @foreach($recettes as $recette)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img width="100px" src="storage/{{ $recette->image }}" class="card-img-top" alt="...">
+                        <img width="100px" height="300px" src="storage/{{ $recette->image }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $recette->title }}</h5>
                             <p class="card-text">{{ Str::limit($recette->description ,20) }}</p>
                             <p class="card-text">Created by: {{ $recette->user_id }}</p> 
+                            <span>&#11088;&#11088;&#11088;&#11088;</span>
                             <a href="{{ route('AfficherDetail', $recette->id) }}" class="stretched-link"></a>
                         </div>
                     </div>

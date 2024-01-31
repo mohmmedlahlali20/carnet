@@ -1,10 +1,9 @@
 <div  class=" m-5">
     <div  class="row my-4">
-        @php
-            $rout = $isUpdate ? route('recettes.edit', $recettes) : route('recettes.store');
-        @endphp
-        <form action="{{ route('recettes.store') }}" method="POST" enctype="multipart/form-data">
+        
+        <form action="{{ route('recettes.edit', $recettes)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Titre</span>
                 <input name="title" type="text" class="form-control" placeholder="Titre de votre recette" aria-label="Titre de votre recette" aria-describedby="basic-addon1" value="{{ old('title', $recettes->title) }}">
@@ -24,13 +23,11 @@
             </div>
             <br>
             <div class="d-grit col-2 ">
-                @if ($isUpdate === true)
+               
                 <a class="btn btn-info mt-4 btn-block" href="{{ route('recettes.edit', $recettes->id) }}">
                     Update
                 </a>
-            @else
-                <button class="btn btn-info mt-4 btn-block" type="submit">Create</button>
-            @endif
+           
                 <a class="btn btn-danger mt-4 btn-block" href="/">Go Back</a>
             </div>
         </form>
