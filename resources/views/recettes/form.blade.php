@@ -1,8 +1,10 @@
 <div  class=" m-5">
     <div  class="row my-4">
+       
         @php
             $route = $isUpdate ? route('recettes.update', $recettes->id) : route('recettes.store');
         @endphp
+
     <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
         @if ($isUpdate)
@@ -25,7 +27,7 @@
             <textarea name="description" class="form-control" aria-label="With textarea">{{old('description',$recettes->description)}}</textarea>
         </div>
         <br>
-        <div class="d-grit col-2">
+        <div class="d-grit col-4">
             <button class="btn btn-info mt-4 btn-block" type="submit">
                 @if ($isUpdate)
                     Update
@@ -33,7 +35,11 @@
                     Create
                 @endif
             </button>
-            <a class="btn btn-danger mt-4 btn-block" href="/"><i class="fa fa-backward" aria-hidden="true"></i></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger mt-4 btn-block" href="/"><i class="fa fa-backward" aria-hidden="true"></i> go to home</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="/recettes" class="btn btn-warning  mt-4 btn-block"><i class="fa fa-backward" aria-hidden="true"></i> go back</a>
+       
         </div>
     </form>
     

@@ -2,7 +2,7 @@
 @section('title', 'home')
 @section('content')
     <div class="container">
-        <h1  class="text-center display-4">Toutes les recettes</h1>
+        <h1  class="text-center display-4 ">Toutes les recettes</h1>
             <br>
             <br>
         <a href="recettes" class="btn btn-info">Gestion Des recettes </a>
@@ -18,7 +18,6 @@
                             <h5 class="card-title">Title :{{ $recette->title }}</h5>
                             <p class="card-text">description : {{ Str::limit($recette->description ,20) }}</p>
                             <h6 class="card-text">date de creation : {{ $recette->created_at }}</h6>
-                            <p class="card-text">Created by: {{ $recette->user_id }}</p> 
                             <span>&#11088;&#11088;&#11088;&#11088;</span>
                             <a href="{{ route('AfficherDetail', $recette->id) }}" class="stretched-link"></a>
                         </div>

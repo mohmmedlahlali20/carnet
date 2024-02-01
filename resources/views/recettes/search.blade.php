@@ -7,9 +7,9 @@
         @if($recettes->isEmpty())
             <div class="alert alert-danger">
                 <h1> 
-                    mkynach "{{ $_GET['query'] }}"  . tzidha??
+                    mkynach <strong>"{{ $_GET['query'] }}"</strong> tzidha??
                 </h1>
-                <a href="recettes/create" class="btn btn-warning text-center">ADD this {{ $_GET['query'] }} recettes <i class="fa fa-plus" aria-hidden="true"></i></a>
+                <a href="recettes/create" class="btn btn-warning text-center">ADD this <strong>{{ $_GET['query'] }}</strong>  recettes <i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
         @else
             <div class="row">
@@ -20,7 +20,6 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $recette->title }}</h5>
                                 <p class="card-text">{{ Str::limit($recette->description ,20) }}</p>
-                                <p class="card-text">Created by: {{ $recette->user_id }}</p>
                                 <span>&#11088;&#11088;&#11088;&#11088;</span>
                                 <a href="{{ route('AfficherDetail', $recette->id) }}" class="stretched-link"></a>
                             </div>

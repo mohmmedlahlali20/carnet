@@ -24,7 +24,7 @@
                     <input type="search" name="query" placeholder="Search" class="form-control">&nbsp;&nbsp;
                     <div class="input-group-append">
                         <button class="btn btn-outline-success" type="submit">Search <i class="fa fa-search"
-                                aria-hidden="true"></i></button>
+                                aria-hidden="true"></i></button>&nbsp;&nbsp;
                     </div>
                 </div>
             </form>
@@ -33,7 +33,7 @@
     <div class="container">
         @yield('content')
     </div>
-    <br><br> <br><br><br> <br>
+    <br><br> <br><br><br><br>
     <script src="https://kit.fontawesome.com/c0bae2ffa6.js" crossorigin="anonymous"></script>
     <footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
         <div class="container text-center">
