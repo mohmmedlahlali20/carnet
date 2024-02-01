@@ -71,7 +71,7 @@ class RecettesController extends Controller
     $formFields = $request->validated();
 
     if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('images'); 
+        $imagePath = $request->file('image')->store('images','public'); 
         $formFields['image'] = $imagePath;
     }
 // dd($formFields);

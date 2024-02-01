@@ -25,7 +25,7 @@
                     <td>{{ Str::limit($recette->description, 20) }}</td>
                     <td>{{ $recette->created_at }}</td>
                     <td>
-                        <img width="100px" src="storage/{{ $recette->image }}" alt="">
+                        <img width="100px" src="{{ asset('storage/' . $recette->image) }}" alt="Image Recette">
                     </td>
                     <td>
                         <a class="btn btn-info" href="{{route('recettes.edit', $recette)}}"><i class="fa fa-refresh" aria-hidden="true"></i></a>
