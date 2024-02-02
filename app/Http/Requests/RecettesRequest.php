@@ -21,15 +21,11 @@ class RecettesRequest extends FormRequest
      */
     public function rules(): array
     {
-          $rules = [
+        $rules = [
             'title' => 'required',
             'description' => 'required',
+            'image' => 'required|image'
         ];
-
-        if ($this->route()->getActionMethod() === 'store') {
-            $rules['image'] = 'required|image';
-        }
-
         return $rules;
     }
 }

@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($recettes as $recette)
+            @forelse ($recettes as $recette)
                 <tr>
                     <td>{{ $recette->id }}</td>
                     <td>{{ $recette->title }}</td>
@@ -38,7 +38,15 @@
                         </form>
                     </td>
                 </tr>
-            @endforeach
+                @empty
+                    
+                        <tr>
+                            <div class="alert alert-info">
+                                <h6>no recette found !</h6>  
+                            </div>
+                        </tr>
+                    
+            @endforelse
         </tbody>
     </table>
     {{ $recettes->links() }}
