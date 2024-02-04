@@ -1,8 +1,13 @@
 @extends('base')
 @section('title', 'recette')
 @section('content')
+@if(session('success'))
+    <div id="success-message" class="alert alert-success" style="display: none;">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="alert alert-secondary"> <h1 class="text-center display-4"> <i class="fa fa-list-alt" aria-hidden="true"></i> Recette Liste hna</h1></div>
-   
     <a href="recettes/create" class="btn btn-primary">ADD&nbsp;<i class="fa fa-plus-square" aria-hidden="true"></i></a>
     <br>
     <br>
@@ -53,3 +58,4 @@
     <a class="btn btn-danger mt-4 btn-block" href="/"><i class="fa fa-backward" aria-hidden="true"></i></a>
     <br><br><br><br><br><br>
 @endsection
+

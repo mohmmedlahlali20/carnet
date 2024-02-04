@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/c0bae2ffa6.js" crossorigin="anonymous"></script>
     <title>@yield('title') | {{ config('app.name') }}</title>
 </head>
 
@@ -34,12 +35,18 @@
         @yield('content')
     </div>
     <br><br> <br><br><br><br>
-    <script src="https://kit.fontawesome.com/c0bae2ffa6.js" crossorigin="anonymous"></script>
     <footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
         <div class="container text-center">
-            <small>Créé avec <i class="fas fa-heart text-danger"></i> par Recette</small>
+            <small> &copy; copyright 2024</i></small>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#success-message').fadeIn('slow').delay(3000).fadeOut('slow'); 
+    });
+</script>
+
 </body>
 
 </html>

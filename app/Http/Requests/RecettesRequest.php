@@ -22,10 +22,11 @@ class RecettesRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'title' => 'required',
+            'title' => 'required|regex:/^[a-zA-Z.\s]+$/',
             'description' => 'required',
-            'image' => 'required|image'
+            'image' => 'required|mimes:jpeg,png,jpg' 
         ];
         return $rules;
+        
     }
 }

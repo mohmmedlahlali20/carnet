@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 // Route::get('/login', [UserController::class, 'login'])->name('login');
 // Route::post('/LoginShow', [UserController::class, 'LoginShow'])->name('LoginShow');
+// Route::get('/register', [UserController::class, 'register']);
 
-Route::get('/register', [UserController::class, 'register']);
+
+
 Route::get('/', [RecettesController::class, 'Afficher_all'])->name('recettes.all');
 
 Route::get('/recettes/{id}', [RecettesController::class, 'Afficher_detail'])
@@ -27,5 +29,4 @@ Route::get('/recettes/{id}', [RecettesController::class, 'Afficher_detail'])
 
 Route::get('/search', [RecettesController::class , 'search']);
 
-// Route::resources(['recettes' => RecettesController::class]);
 Route::resource('recettes', RecettesController::class);

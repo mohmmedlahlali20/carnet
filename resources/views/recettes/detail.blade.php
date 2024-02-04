@@ -7,7 +7,7 @@
     <div class="card">
         <br>
         <div class="text-center">
-            <img style="width: 400px" src="{{ asset('storage/' . $recettes->image) }}" class="card-img-top" alt="Recettes Image">
+            <img style="width: 400px  ; height:400px"  src="{{ asset('storage/' . $recettes->image) }}" class="card-img-top" alt="Recettes Image">
         </div>
         <div class="card-body">
             <h5 class="card-title">Title : {{ $recettes->title }}</h5>

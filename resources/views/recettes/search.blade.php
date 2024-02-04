@@ -4,12 +4,20 @@
     <div class="container">
         <h1 class="text-center display-4">Toutes les recettes</h1><br><br>
         <a href="recettes" class="btn btn-info">Gestion Des recettes</a> <br>     <br>
+        @if (is_numeric($_GET['query']))
+        <div class="alert alert-danger">
+            <h1> 
+                 "{{$_GET['query']}}" est un nombre.
+            </h1>
+            <a class="btn btn-danger" href="/">Retour</a>
+        </div>
+    @else
         @if($recettes->isEmpty())
             <div class="alert alert-danger">
                 <h1> 
-                    mkynach <strong>"{{ $_GET['query'] }}"</strong> tzidha??
+                    Aucune result  "{{ $_GET['query'] }}" n'a été trouvée.
                 </h1>
-                <a href="recettes/create" class="btn btn-warning text-center">ADD this <strong>{{ $_GET['query'] }}</strong>  recettes <i class="fa fa-plus" aria-hidden="true"></i></a>
+                <a href="recettes/create" class="btn btn-warning text-center">Ajouter la recette "{{ $_GET['query'] }}" ? <i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
         @else
             <div class="row">
@@ -28,5 +36,6 @@
                 @endforeach
             </div>
         @endif
-    </div>
+    @endif
+    
 @endsection
