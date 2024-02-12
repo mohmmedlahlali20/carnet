@@ -36,10 +36,12 @@
                         <a class="btn btn-info" href="{{route('recettes.edit', $recette)}}"><i class="fa fa-refresh" aria-hidden="true"></i></a>
                         <br>
                         <br>
-                        <form method="POST" action="{{ route('recettes.destroy', $recette) }}">
+                        <form action="{{ route('admin.destroy', $user->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>

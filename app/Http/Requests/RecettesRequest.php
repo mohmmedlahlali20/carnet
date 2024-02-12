@@ -24,8 +24,10 @@ class RecettesRequest extends FormRequest
         $rules = [
             'title' => 'required|regex:/^[a-zA-Z.\s]+$/',
             'description' => 'required',
-            'image' => 'required|mimes:jpeg,png,jpg' 
+            'image' => 'required|mimes:jpeg,png,jpg'
         ];
+            
+        
         return $rules;
         
     }

@@ -11,13 +11,13 @@ class RecettesController extends Controller
 
     public function index()
     {
-        $recettes = Recettes::paginate(6); 
-        return view('recettes.index', compact('recettes')); 
+        $recettes = Recettes::orderBy('title', 'ASC')->paginate(6);
+        return view('recettes.index', compact('recettes'));
     }
 
     public function Afficher_all()
     {
-        $recettes = Recettes::paginate(5); 
+        $recettes = Recettes::orderBy('title', 'ASC')->paginate(5); 
         return view('recettes.home', compact('recettes')); 
     }
 
@@ -31,7 +31,7 @@ class RecettesController extends Controller
 
     public function create()
     {
-        $recettes = new Recettes();
+       
         $isUpdate = false;
         return view('recettes.create',compact('recettes' , 'isUpdate'));
     }
@@ -46,9 +46,7 @@ class RecettesController extends Controller
         // dd($recette);
         if ($recette->save()) {
             return redirect()->route('recettes.index')->with('success', 'Recette ajoute');
-        } else {
-            return redirect()->back()->withErrors(['error' , 'Une erreur ']);
-        }
+        } 
     }
 
     public function show(Recettes $recettes)
@@ -95,4 +93,3 @@ $ID->update($formFields);
         
     
 }
-// ->with()

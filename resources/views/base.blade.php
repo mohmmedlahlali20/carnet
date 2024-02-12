@@ -13,7 +13,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light ">
         <div>
             {{-- <img width="100px" height="100px"  src="" alt="Random Image"> --}}
         </div>
